@@ -65,17 +65,21 @@ Alternatively, segmentation by **sets-of-k** partitions the string into sets of 
 And unlike the previous two methods, this one produces segments of BLOC strings of the same length.
 While segmentation is based on action strings, for each action segment, we also create a content segment that includes the corresponding content symbols. 
 
-<figure style="text-align:center;">
+<div align="center">
+
   <img src="misc/segmentation_types.png" style="width:47%; min-width:300px; border:1px solid #ccc;">
-  <figcaption style="font-size:14px; margin-top:8px;">
-    <strong>Figure 2 : </strong> Three ways of segmenting a user's BLOC string. 
+
+  <p style="font-size:14px; max-width:700px; margin-top:8px;">
+    <strong>Figure 2:</strong> Three ways of segmenting a user's BLOC string. 
     This example includes pauses less than an hour (Δh), between an hour and a day (Δd), 
     and between a day and a month (Δm).  
     (a) <em>pauses</em> (longer than one hour).  
     (b) <em>weeks</em>.  
     (c) <em>sets-of-k</em> (k = 4).
-  </figcaption>
-</figure>
+  </p>
+
+</div>
+
 
 After a user's behavior is partitioned into sequential segments, we must select different segments to be compared for measuring how behavior evolves over time. We explored two selection methods. Consider a sequence of four segments $s_1$, $s_2$, $s_3$, and $s_4$ for illustration. In **adjacent** selection, we compare consecutive segments, e.g., $(s_1 \text{ vs. } s_2)$, $(s_2 \text{ vs. } s_3)$, and $(s_3 \text{ vs. } s_4)$. This method is sensitive to short-term fluctuations in behaviors. In **cumulative** selection, we compare each segment with the concatenation of all prior segments, e.g., $(s_1 \text{ vs. } s_2)$, $(s_1 s_2 \text{ vs. } s_3)$, and $(s_1 s_2 s_3 \text{ vs. } s_4)$. This method captures how present behavior diverges from historical ones.
 
