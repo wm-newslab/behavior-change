@@ -1,0 +1,77 @@
+infoOps_dataset : "dataset/YYYY_MM"
+
+src :
+  - 2019_08/egypt_uae_082019_1
+  - 2019_08/china_082019_1
+  - 2019_06/iran_201906_1
+  - 2019_06/catalonia_201906_1
+  - 2019_06/iran_201906_3
+  - 2019_01/venezuela_201901_2
+  - 2019_01/venezuela_201901_1
+  - 2019_01/iran_201901_X/iran_201901_1
+  - 2019_01/russia_201901_1
+  - 2019_01/bangladesh_201901_1
+  - 2020_03/ghana_nigeria_032020
+  - 2021_12/CNCC_0621_YYYY/CNCC_0621_2021
+  - 2020_09/ira_092020
+  - 2019_08/spain_082019_1
+  - 2020_12/armenia_202012,
+
+  - 2020_12/GRU_202012
+  - 2020_12/IRA_202012
+  - 2021_12/MX_0621_YYYY/MX_0621_2019
+  - 2021_12/Venezuela_0621_YYYY/Venezuela_0621_2021
+  - 2021_12/Venezuela_0621_YYYY/Venezuela_0621_2020
+  - 2020_09/thailand_092020
+  - 2020_08/qatar_082020
+
+  - 2019_08/uae_082019_1
+  - 2019_08/ecuador_082019_1
+  - 2019_06/iran_201906_2
+  - 2019_06/venezuela_201906_1 
+  - 2020_12/iran_202012
+  - 2021_12/uganda_0621_YYYY/uganda_0621_2020
+  - 2021_12/uganda_0621_YYYY/uganda_0621_2019
+
+  - 2020_09/iran_092020
+  - 2019_08/china_082019_2
+  - 2021_12/CNHU_0621_YYYY/CNHU_0621_2021
+  - 2021_12/CNHU_0621_YYYY/CNHU_0621_2020
+  - 2018_10/iranian
+
+segmentation_type: "segment_on_pauses" #['sets_of_four', 'week_number', 'segment_on_pauses']
+comparison_method: "adjacent" #['adjacent', 'cumulative']
+distance_metric: "compression" #['cosine-similarity', 'compression']
+
+
+n_gram: 4
+min_tweets_per_user: 20
+max_tweets_per_user: 5000
+
+
+bloc_variant : {'type': 'folded_words', 'fold_start_count': 3, 'count_applies_to_all_char': False}
+bloc_params_tf : {'ngram': 1, 'min_df': 1, 'tf_matrix_norm': '', 'keep_tf_matrix': True, 'set_top_ngrams': True, 'top_ngrams_add_all_docs': False, 'token_pattern': '[^□⚀⚁⚂⚃⚄⚅. |()*]+|[□⚀⚁⚂⚃⚄⚅.]'}
+
+gen_bloc_params_segment_on_pauses : {
+  'blank_mark': 60, 
+  'bloc_alphabets': ['action', 'content_syntactic'], 
+  'fold_start_count': 10, 
+  'keep_bloc_segments': True, 
+  'keep_tweets': True, 
+  'segmentation_type': 'segment_on_pauses',
+  'segment_on_pauses': 3600, 
+  'sort_action_words': False, 
+  'tweet_order': 'sorted'
+}
+
+gen_bloc_params_week_number :  {
+  'blank_mark': 60, 
+  'bloc_alphabets': ['action', 'content_syntactic'], 
+  'fold_start_count': 10,  
+  'keep_bloc_segments': True, 
+  'keep_tweets': True, 
+  'segmentation_type': 'week_number', #['week_number', 'day_of_year_bin', 'yyyy-mm-dd', 'segment_on_pauses']
+  'sort_action_words': False, 
+  'tweet_order': 'sorted'
+}
+

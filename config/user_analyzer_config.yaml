@@ -1,0 +1,35 @@
+path_to_data : "dataset/users/celebrity_elonmusk.jsonl.gz"
+bloc_variant : {'type': 'folded_words', 'fold_start_count': 3, 'count_applies_to_all_char': False}
+bloc_params_tf : {'ngram': 1, 'min_df': 1, 'tf_matrix_norm': '', 'keep_tf_matrix': True, 'set_top_ngrams': True, 'top_ngrams_add_all_docs': False, 'token_pattern': '[^□⚀⚁⚂⚃⚄⚅. |()*]+|[□⚀⚁⚂⚃⚄⚅.]'}
+
+segmentation_type: "segment_on_pauses" #['sets_of_four', 'week_number', 'segment_on_pauses']
+comparison_method: "adjacent" #['adjacent', 'cumulative']
+distance_metric: "cosine-similarity" #['cosine-similarity', 'compression']
+
+
+# if you are using sets_of_four segmentation, specify the n-gram size here
+n_gram: 4
+
+gen_bloc_params_segment_on_pauses : {
+  'blank_mark': 60, 
+  'bloc_alphabets': ['action', 'content_syntactic'], 
+  'fold_start_count': 10, 
+  'keep_bloc_segments': True, 
+  'keep_tweets': True, 
+  'segmentation_type': 'segment_on_pauses',
+  'segment_on_pauses': 3600, 
+  'sort_action_words': False, 
+  'tweet_order': 'sorted'
+}
+
+gen_bloc_params_week_number :  {
+  'blank_mark': 60, 
+  'bloc_alphabets': ['action', 'content_syntactic'], 
+  'fold_start_count': 10,  
+  'keep_bloc_segments': True, 
+  'keep_tweets': True, 
+  'segmentation_type': 'week_number', #['week_number', 'day_of_year_bin', 'yyyy-mm-dd', 'segment_on_pauses']
+  'sort_action_words': False, 
+  'tweet_order': 'sorted'
+}
+
