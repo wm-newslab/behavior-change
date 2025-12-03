@@ -4,36 +4,30 @@ Social media accounts engaging in online manipulation can change their behaviors
 
 The [BLOC](https://github.com/anwala/bloc) (Behavioral Languages for Online Characterization) framework provides formal languages that can be used to represent the behaviors of social media accounts. The BLOC representations in Figure 1 illustrate the behavioral patterns exhibited by different accounts. By analyzing these patterns and how they change over time, we can differentiate between authentic, and inauthentic behaviors. 
 
-<div style="text-align:center;">
+<table>
+  <tr>
+    <td align="center">
+      <img src="misc/fox_news.png" alt="@FoxNews"><br>
+      <code>@FoxNews</code>
+    </td>
+    <td align="center">
+      <img src="misc/elon.png" alt="@elonmusk"><br>
+      <code>@elonmusk</code>
+    </td>
+    <td align="center">
+      <img src="misc/ten_GOP.png" alt="@TEN_GOP"><br>
+      <code>@TEN_GOP</code>
+    </td>
+  </tr>
+</table>
 
-  <div style="
-      display:flex; 
-      justify-content:center; 
-      gap:2px; 
-      flex-wrap:nowrap;
-  ">
+<p align="center" style="max-width:900px; margin:15px auto; font-size:14px; line-height:1.4;">
+  <strong>Figure 1:</strong> Color-coding of BLOC action symbols of Twitter accounts to illustrate how their behaviors change (color switches). Each square represents an action. Color legend (non-exhaustive): Green-<b>post</b>, Red-<b>retweet</b>, Cyan<b>reply</b>, Gray-<b>pauses</b> (longer pauses = darker gray)<br>
+  (a) <code>@FoxNews</code> exhibits repetitive patterns, reflecting automated activity. <br>
+  (b) <code>@elonmusk</code> exhibits a diverse mix of actions without repetitive patterns. <br>
+  (c) <code>@TEN_GOP</code>, a Russian troll account, shows sudden shifts between organic-looking and repetitive patterns.
+</p>
 
-  <figure style="margin:0; flex:1;">
-      <img src="misc/fox_news.png" style="width:100%; border:1px solid #ccc;">
-      <figcaption><code>@FoxNews</code></figcaption>
-  </figure>
-
-  <figure style="margin:0; flex:1;">
-      <img src="misc/elon.png" style="width:100%; border:1px solid #ccc;">
-      <figcaption><code>@elonmusk</code></figcaption>
-  </figure>
-
-  <figure style="margin:0; flex:1;">
-      <img src="misc/ten_GOP.png" style="width:100%; border:1px solid #ccc;">
-      <figcaption><code>@TEN_GOP</code></figcaption>
-  </figure>
-
-  </div>
-
-  <p style="max-width:900px; margin:15px auto; font-size:14px; line-height:1.4;"> <strong>Figure 1:</strong> Color-coding of BLOC action symbols of Twitter accounts to illustrate how their behaviors change (color switches). Each square represents an action. Color legend (non-exhaustive): Green-<b>post</b>, Red-<b>retweet</b>, Cyan<b>reply</b>, Gray-<b>pauses</b> (longer pauses = darker gray)<br> (a) <code>@FoxNews</code> exhibits repetitive patterns, reflecting automated activity. <br> (b) <code>@elonmusk</code> exhibits a diverse mix of actions without repetitive patterns. <br> (c) <code>@TEN_GOP</code>, a Russian troll account, shows sudden shifts between organic-looking and repetitive patterns.
-  </p>
-
-</div>
 
 
 
