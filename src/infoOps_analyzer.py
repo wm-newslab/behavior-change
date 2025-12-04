@@ -510,40 +510,37 @@ def get_info_ops_drivers_control_users_tweets(file_path, dataset_name, min_tweet
         if isinstance(control_users, dict) else sample_keys
     )
 
-    job_lst = []
-    for uid, tweets in sampled_control_accounts.items():
-        job_lst.append({
-            'func': add_bloc_sequences,
-            'args': {'tweets': tweets, 'all_bloc_symbols': all_bloc_symbols, **gen_bloc_params},
-            'print': '',
-            'misc': None
-        })
-    all_control_blocs = parallelTask(job_lst, threadCount=5)
-
     records = []
-    for ou in all_control_blocs:
+    # =============
+    # control
+    # =============
+    for uid, tweets in sampled_control_accounts.items():
+        u_bloc = add_bloc_sequences(
+            tweets,
+            all_bloc_symbols=all_bloc_symbols,
+            **gen_bloc_params,
+        )
         records.append({
-            'user_id': ou['output']['user_id'],
+            'user_id': uid,
             'user_class': 'control',
             'src': 'infoOps',
-            'u_bloc': ou['output']
+            'u_bloc': u_bloc
         })
 
+    # =============
+    # driver
+    # =============
     for uid, tweets in driver_users.items():
-        job_lst.append({
-            'func': add_bloc_sequences,
-            'args': {'tweets': tweets, 'all_bloc_symbols': all_bloc_symbols, **gen_bloc_params},
-            'print': '',
-            'misc': None
-        })
-    all_driver_blocs = parallelTask(job_lst, threadCount=5)
-
-    for ou in all_driver_blocs:
+        u_bloc = add_bloc_sequences(
+            tweets,
+            all_bloc_symbols=all_bloc_symbols,
+            **gen_bloc_params,
+        )
         records.append({
-            'user_id': ou['output']['user_id'],
+            'user_id': uid,
             'user_class': 'driver',
             'src': 'infoOps',
-            'u_bloc': ou['output']
+            'u_bloc': u_bloc
         })
 
     return records
