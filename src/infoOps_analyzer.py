@@ -4,6 +4,7 @@ import csv
 import random
 import copy
 import re
+import os
 
 from datetime import datetime, timedelta
 from bloc.util import getDictFromJson
@@ -588,8 +589,13 @@ def main(cfg):
                     )
 
             df = pd.DataFrame(user_data)
-            best_score, min_class_size = classifier(df, "coordination_detection")
-            print("Best F1:", best_score, "| min_class_size:", min_class_size)
+
+            #used for save user_id set
+            filepath_to_save = f"dataset/infoOps/{datasetName}"
+            os.makedirs(filepath_to_save, exist_ok=True)
+            print(df[['user_id', 'user_class']].to_csv(f"{filepath_to_save}/_user_id.txt", index=False))
+
+            classifier(df, "coordination_detection")
 
         else:
             print(f"Dataset {name_mapper[datasetName]} is missing required files. Skipping...")

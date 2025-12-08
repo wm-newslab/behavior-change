@@ -134,7 +134,7 @@ The experiments described above have already been completed. The commands below 
 python -m src.index --task retraining_analyzer --config config/retraining_config.yaml > logs/retraining_analysis.txt
 ```
 - dataset
-  - retraining_data
+  - [retraining_data](https://botometer.osome.iu.edu/bot-repository/datasets.html)
     - astroturf
       - tweets.jsons.gz
       - userIds.txt
@@ -146,14 +146,14 @@ python -m src.index --task retraining_analyzer --config config/retraining_config
 python -m src.index --task fox8_analyzer --config config/fox8_config.yaml > logs/fox8.txt
 ```
 - dataset
-  - fox8_23_dataset.ndjson.gz
+  - [fox8_23_dataset.ndjson.gz](https://github.com/osome-iu/AIBot_fox8)
 
 ### Information Operations (InfoOps) coordination analysis
 ```bash
 python -m src.index --task infoOps_analyzer --config config/infoOps_config.yaml > logs/infoOps.txt
 ```
 - dataset
-  - YYYY_MM
+  - [YYYY_MM](https://zenodo.org/records/14189193)
     - campaign_1
       - DriversControl/control_driver_users.csv
       - driver_tweets.csv.gz

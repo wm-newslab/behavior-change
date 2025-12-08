@@ -1,4 +1,5 @@
 import gzip
+import os
 import pandas as pd
 
 from bloc.generator import add_bloc_sequences 
@@ -94,6 +95,8 @@ def main(cfg):
             )
 
     df = pd.DataFrame(user_data)
-    best_score, min_class_size = classifier(df, "automation_detection")
-    print("Best F1:", best_score, "| min_class_size:", min_class_size)
-    return best_score, min_class_size
+
+    #used for save user_id set
+    print(df[['user_id', 'user_class', 'src']].to_csv("dataset/retraining_user_id.txt", index=False))
+    
+    classifier(df, "automation_detection")

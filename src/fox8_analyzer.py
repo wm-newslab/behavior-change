@@ -1,6 +1,7 @@
 import gzip
 import pandas as pd
 import json
+import os
 
 from bloc.generator import add_bloc_sequences 
 from bloc.util import get_default_symbols, getDictFromJson, genericErrorInfo
@@ -68,6 +69,8 @@ def main(cfg):
             )
 
     df = pd.DataFrame(user_data)
-    best_score, min_class_size = classifier(df, "coordination_detection")
-    print("Best F1:", best_score, "| min_class_size:", min_class_size)
-    return best_score, min_class_size
+
+    #used for save user_id set
+    print(df[['user_id', 'user_class']].to_csv("dataset/fox8_user_id.txt", index=False))
+    
+    classifier(df, "coordination_detection")

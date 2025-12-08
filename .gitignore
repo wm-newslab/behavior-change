@@ -1,5 +1,9 @@
 dataset/retraining_data
 dataset/YYYY_MM
 dataset/fox8_23_dataset.ndjson.gz
+dataset/infoOps
+dataset/fox8_user_id.txt
+dataset/retraining_user_id.txt
 myenv
 run_notebook.csh
+src/__pycache__
