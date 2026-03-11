@@ -1,3 +1,23 @@
+## About
+Behavior change can be used for identifying social media manipulation
+- Behavior change is consistent for authentic users 
+- Social bots exhibit either very low or very high behavioral change
+- Coordinated inauthentic accounts exhibit highly similar distributions of behavioral change within the same campaign, but diverse across campaigns
+
+To cite, kindly use:
+```
+@inproceedings{ariyarathne_isuru_nwala_behav_change,
+  author    = {Ariyarathne, Isuru and Ariyarathne, Gangani and Flammini, Alessandro and Menczer, Filippo and Nwala, Alexander C.},
+  title     = {{Behavior Change as a Signal for Identifying Social Media Manipulation}},
+  booktitle = {Proceedings of the 18th ACM Web Science Conference (WebSci ’26)},
+  year      = {2026},
+  location  = {Braunschweig, Germany},
+  publisher = {ACM},
+  doi       = {10.1145/3795766.3799748},
+  url       = {https://doi.org/10.1145/3795766.3799748}
+}
+```
+
 ## Behavior Change as a Signal for Identifying Social Media Manipulation
 
 Social media accounts engaging in online manipulation can change their behaviors for re-purposing or to evade detection. Here we investigate the degree to which change in behavior can serve as a signal for identifying automated or coordinated accounts.
