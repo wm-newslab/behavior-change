@@ -56,7 +56,7 @@ The [BLOC](https://github.com/anwala/bloc) (Behavioral Languages for Online Char
 
 ### 1. Download the project
 ```bash
-wget -O behavior_change.zip https://anonymous.4open.science/api/repo/behavioral-change-2414/zip
+curl -L -o behavior_change.zip https://github.com/wm-newslab/behavior-change/archive/refs/heads/main.zip
 unzip behavior_change.zip -d behavior_change
 cd behavior_change/
 ```
